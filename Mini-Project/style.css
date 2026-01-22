@@ -1,22 +1,27 @@
+/* universal selector applies to everyyyything and keeps it neat */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Courier New";
+  
+}
 body {
   height: 100vh;
-  background:orchid;
-  margin: 0;
+  background: orchid;
   text-align: center;
-  font-family:'Times New Roman';
-  border: 10px dotted rgb(255, 0, 153);
 }
-
 html {
   font-size: 16px;
-  box-sizing: border-box;
 }
+/* centering it, thank u stackoverflow */
 .wrapper {
   position: absolute;
   transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
 }
+/* flexbox to make the spacing good */
 .container {
   width: 70vmin;
   height: 70vmin;
@@ -24,6 +29,7 @@ html {
   flex-wrap: wrap;
   gap: 2vmin;
 }
+/* styling the buttons*/
 .button-option {
   background: #ffffff;
   height: 22vmin;
@@ -33,3 +39,57 @@ html {
   font-size: 12vmin;
   color: #d161ff;
 }
+/* centering the restart button and making it cute*/
+#restart {
+  font-size: 1.3em;
+  padding: 1em;
+  border-radius: 8px;
+  background-color: #0a0027;
+  color: #ffffff;
+  border: none;
+  position: relative;
+  margin: 1.5em auto 0 auto;
+  display: block;
+}
+/* stole this from stack overflow as a pop up template */
+.popup {
+  background: rgb(229, 9, 245);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  z-index: 2;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1em;
+  font-size: 12vmin;
+}
+#new-game {
+  font-size: 0.6em;
+  padding: 0.5em 1em;
+  background-color: #0a0027;
+  color: #ffffff;
+  border-radius: 0.2em;
+  border: none;
+}
+/* styling for the win or draw message */
+#message {
+  color: #ffffff;
+  text-align: center;
+  font-size: 1em;
+}
+/* hiding it for when JS tells it to*/
+.popup.hide {
+  display: none;
+}
+
+/* RESEARCH 
+em units = relative unit based on the font size of the element 
+so if the user wants to zoom in it should scale correctly 
+
+vmin = 1% of the smaller viewpoint dimenstion 
+it should basically make sure the board scales proportionally based on diff screen sizes 
+
+px works but not good for accessibility 
+*/
